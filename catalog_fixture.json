@@ -1,0 +1,130 @@
+[
+{
+    "model": "catalog.category",
+    "pk": 8,
+    "fields": {
+        "name": "Овощи",
+        "description": "Огородные плоды и зелень, употребляемые в пищу (огурцы, морковь, помидоры, свекла       и др.)."
+    }
+},
+{
+    "model": "catalog.category",
+    "pk": 9,
+    "fields": {
+        "name": "Фрукты",
+        "description": "Съедобные сочные плоды некоторых деревьев и кустарниковых растений."
+    }
+},
+{
+    "model": "catalog.category",
+    "pk": 10,
+    "fields": {
+        "name": "Хлебобулочные изделия",
+        "description": "Пищевые продукты, получаемые методом выпекания из теста (состоящего как минимум из муки, воды и соли), разрыхлённого дрожжами или закваской. К ним относятся хлеб, булочные изделия, пироги, пирожки, пончики."
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 8,
+    "fields": {
+        "name": "Огурцы",
+        "description": "",
+        "category": 8,
+        "price": 210.0,
+        "image": "",
+        "created_at": "2025-05-11T16:23:26.600Z",
+        "updated_at": "2025-05-11T16:23:26.600Z"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 9,
+    "fields": {
+        "name": "Помидоры",
+        "description": "розовые",
+        "category": 8,
+        "price": 420.0,
+        "image": "",
+        "created_at": "2025-05-11T16:56:50.839Z",
+        "updated_at": "2025-05-11T16:56:50.839Z"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 10,
+    "fields": {
+        "name": "Картофель",
+        "description": "Молодой",
+        "category": 8,
+        "price": 80.0,
+        "image": "",
+        "created_at": "2025-05-11T16:59:44.148Z",
+        "updated_at": "2025-05-11T16:59:44.148Z"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 11,
+    "fields": {
+        "name": "Груши Конференция",
+        "description": "",
+        "category": 9,
+        "price": 390.0,
+        "image": "",
+        "created_at": "2025-05-11T17:17:05.461Z",
+        "updated_at": "2025-05-11T17:17:05.461Z"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 12,
+    "fields": {
+        "name": "Бананы",
+        "description": "Эквадор",
+        "category": 9,
+        "price": 180.0,
+        "image": "",
+        "created_at": "2025-05-11T17:29:47.958Z",
+        "updated_at": "2025-05-11T17:29:47.958Z"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 14,
+    "fields": {
+        "name": "Хлеб Дарницкий",
+        "description": "ржаной",
+        "category": 10,
+        "price": 65.0,
+        "image": "",
+        "created_at": "2025-05-11T17:48:05.215Z",
+        "updated_at": "2025-05-11T17:48:05.215Z"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 15,
+    "fields": {
+        "name": "Батон к чаю",
+        "description": "сладкий",
+        "category": 10,
+        "price": 77.0,
+        "image": "",
+        "created_at": "2025-05-11T17:53:03.134Z",
+        "updated_at": "2025-05-11T21:04:59.089Z"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 16,
+    "fields": {
+        "name": "Плюшка Московская",
+        "description": "",
+        "category": 10,
+        "price": 43.0,
+        "image": "",
+        "created_at": "2025-05-11T17:55:15.557Z",
+        "updated_at": "2025-05-11T17:55:15.557Z"
+    }
+}
+]
