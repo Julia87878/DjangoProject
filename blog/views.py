@@ -46,7 +46,7 @@ class PostUpdateView(UpdateView):
     success_url = reverse_lazy("blog:posts_list")
 
     def get_success_url(self):
-        return reverse("blog:post_detail", args=[self.kwargs.get("pk")])
+        return reverse("blog:post_detail", args=[self.object.pk])
 
 
 class PostDeleteView(DeleteView):
