@@ -29,10 +29,10 @@ class Post(models.Model):
         verbose_name="Количество просмотров", default=0
     )
 
-    def __str__(self):
-        return f"{self.title}{self.content}{self.created_at}{self.is_active_publication}{self.views_counter}."
-
     class Meta:
         verbose_name = "Запись блога"
         verbose_name_plural = "Записи блога"
         ordering = ["title", "created_at", "views_counter"]
+
+    def __str__(self):
+        return f"{self.title}{self.content}{self.created_at}{self.is_active_publication}{self.views_counter}."

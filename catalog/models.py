@@ -11,13 +11,13 @@ class Category(models.Model):
         blank=True, verbose_name="Описание", help_text="Введите описание категории"
     )
 
-    def __str__(self):
-        return self.name
-
     class Meta:
         verbose_name = "категория"
         verbose_name_plural = "категории"
         ordering = ["name"]
+
+    def __str__(self):
+        return self.name
 
 
 class Product(models.Model):
@@ -48,10 +48,10 @@ class Product(models.Model):
         auto_now=True, verbose_name="Дата последнего изменения"
     )
 
-    def __str__(self):
-        return f"{self.name} {self.category} {self.price}."
-
     class Meta:
         verbose_name = "продукт"
         verbose_name_plural = "продукты"
         ordering = ["name", "category", "price"]
+
+    def __str__(self):
+        return f"{self.name} {self.category} {self.price}."
