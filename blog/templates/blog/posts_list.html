@@ -1,0 +1,26 @@
+
+{% extends 'blog/base.html' %}
+
+{% block title %}Блог{% endblock %}
+
+{% block content %}
+{% include 'blog/includes/header.html' %}
+<div class="container">
+    <div class="row text-center">
+        {% for post in posts %}
+        <div class="col-8">
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">{{post.title}}</h4>
+                </div>
+                <div class="card-body">
+                    <p>Описание приготовления: {{post.content|truncatechars:80}}</p>
+                    <img src="{{post.image.url}}">
+                    <a class="btn btn-success" href="{% url 'blog:post_detail' post.pk %}" role="button">Прочитать</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
