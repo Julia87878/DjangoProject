@@ -1,0 +1,36 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}Описание рецепта{% endblock %}
+
+{% block content %}
+{% include 'blog/includes/header.html' %}
+<div class="container">
+    <div class="row text-center">
+        <div class="col-8">
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">{{post.title}}</h4>
+                </div>
+                <div class="card-body">
+                    <p>Описание рецепта: {{post.content}}</p>
+                    <img src="{{post.image.url}}">
+                    <a href="{% url 'blog:post_update' post.pk %}" class="btn btn-primary">Редактировать</a>
+                    <a href="{% url 'blog:post_delete' post.pk %}" class="btn btn-danger">Удалить</a>
+                    <p>Количество просмотров: {{post.views_counter}}</p>
+                    <p>Дата публикации: {{post.created_at|date:"d M Y"}}</p>
+                    <a class="btn btn-success" href="{% url 'blog:posts_list' %}" role="button">Вернуться к списку рецептов</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
