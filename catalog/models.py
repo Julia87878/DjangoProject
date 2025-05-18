@@ -43,6 +43,10 @@ class Product(models.Model):
         help_text="Загрузите изображение продукта.",
         blank=True,
     )
+
+    is_active_publication = models.BooleanField(
+        default=True, verbose_name="Признак публикации"
+    )
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
     updated_at = models.DateTimeField(
         auto_now=True, verbose_name="Дата последнего изменения"

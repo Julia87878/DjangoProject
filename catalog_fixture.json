@@ -32,6 +32,7 @@
         "category": 8,
         "price": 229.99,
         "image": "images/Огорцы.jpeg",
+        "is_active_publication": true,
         "created_at": "2025-05-11T16:23:26.600Z",
         "updated_at": "2025-05-13T19:52:45.659Z"
     }
@@ -45,6 +46,7 @@
         "category": 8,
         "price": 429.99,
         "image": "images/Помидоры.jpeg",
+        "is_active_publication": true,
         "created_at": "2025-05-11T16:56:50.839Z",
         "updated_at": "2025-05-13T20:00:51.079Z"
     }
@@ -58,6 +60,7 @@
         "category": 8,
         "price": 79.99,
         "image": "images/Картофель_ранний.jpeg",
+        "is_active_publication": true,
         "created_at": "2025-05-11T16:59:44.148Z",
         "updated_at": "2025-05-13T20:00:10.790Z"
     }
@@ -71,6 +74,7 @@
         "category": 9,
         "price": 389.99,
         "image": "images/Груши.webp",
+        "is_active_publication": true,
         "created_at": "2025-05-11T17:17:05.461Z",
         "updated_at": "2025-05-13T20:13:39.019Z"
     }
@@ -82,10 +86,11 @@
         "name": "Бананы",
         "description": "Бананы являются одной из древнейших пищевых культур. Бананы содержат в себе огромное количество витаминов. Они прекрасно восстанавливают силы при физической нагрузке, а также помогают улучшить память, внимание, повышают работоспособность, а каротин, содержащийся в банане, замедляет процесс старения и предотвращает сердечно-сосудистые заболевания.",
         "category": 9,
-        "price": 179.99,
+        "price": 189.99,
         "image": "images/Бананы.jpeg",
+        "is_active_publication": true,
         "created_at": "2025-05-11T17:29:47.958Z",
-        "updated_at": "2025-05-13T19:59:23.881Z"
+        "updated_at": "2025-05-17T00:31:09.021Z"
     }
 },
 {
@@ -97,6 +102,7 @@
         "category": 10,
         "price": 69.99,
         "image": "images/Хлеб.jpeg",
+        "is_active_publication": true,
         "created_at": "2025-05-11T17:48:05.215Z",
         "updated_at": "2025-05-13T18:33:55.884Z"
     }
@@ -110,6 +116,7 @@
         "category": 10,
         "price": 77.99,
         "image": "images/Батончик.jpeg",
+        "is_active_publication": true,
         "created_at": "2025-05-11T17:53:03.134Z",
         "updated_at": "2025-05-13T19:56:56.947Z"
     }
@@ -123,8 +130,23 @@
         "category": 10,
         "price": 39.99,
         "image": "images/Плюшка.jpg",
+        "is_active_publication": true,
         "created_at": "2025-05-11T17:55:15.557Z",
         "updated_at": "2025-05-13T20:15:09.854Z"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 17,
+    "fields": {
+        "name": "Мандарины",
+        "description": "Из Абхазии.",
+        "category": 9,
+        "price": 129.99,
+        "image": "images/Мандарины.png",
+        "is_active_publication": true,
+        "created_at": "2025-05-17T00:46:40.649Z",
+        "updated_at": "2025-05-17T00:46:40.649Z"
     }
 }
 ]
