@@ -48,7 +48,7 @@ class ProductForm(forms.ModelForm):
         )
 
     def clean_name(self):
-        name = self.cleaned_data.get("name")
+        name = self.cleaned_data.get("name", "")
         if any(word in name.lower() for word in FORBIDDEN_WORDS):
             raise ValidationError(
                 "Наименование продукта не может содержать запрещенные слова."
@@ -56,7 +56,7 @@ class ProductForm(forms.ModelForm):
         return name
 
     def clean_description(self):
-        description = self.cleaned_data.get("description")
+        description = self.cleaned_data.get("description", "")
         if any(word in description.lower() for word in FORBIDDEN_WORDS):
             raise ValidationError(
                 "Описание продукта не может содержать запрещенные слова."
@@ -64,7 +64,7 @@ class ProductForm(forms.ModelForm):
         return description
 
     def clean_price(self):
-        price = self.cleaned_data.get("price")
+        price = self.cleaned_data.get("price", 0)
         if price < 0:
             raise ValidationError("Цена не может быть отрицательной.")
         return price
