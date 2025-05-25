@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse, reverse_lazy
 from django.views.generic import DetailView, ListView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
@@ -5,7 +6,7 @@ from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from .models import Post
 
 
-class PostListView(ListView):
+class PostListView(LoginRequiredMixin, ListView):
     model = Post
     template_name = "blog/posts_list.html"
     context_object_name = "posts"
@@ -15,7 +16,7 @@ class PostListView(ListView):
         return queryset.filter(is_active_publication=True)
 
 
-class PostDetailView(DetailView):
+class PostDetailView(LoginRequiredMixin, DetailView):
     model = Post
     template_name = "blog/post_detail.html"
     context_object_name = "post"
@@ -27,14 +28,14 @@ class PostDetailView(DetailView):
         return self.object
 
 
-class PostCreateView(CreateView):
+class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
     fields = ["title", "content", "image", "is_active_publication"]
     template_name = "blog/post_form.html"
     success_url = reverse_lazy("blog:posts_list")
 
 
-class PostUpdateView(UpdateView):
+class PostUpdateView(LoginRequiredMixin, UpdateView):
     model = Post
     fields = [
         "title",
@@ -49,7 +50,7 @@ class PostUpdateView(UpdateView):
         return reverse("blog:post_detail", args=[self.object.pk])
 
 
-class PostDeleteView(DeleteView):
+class PostDeleteView(LoginRequiredMixin, DeleteView):
     model = Post
     template_name = "blog/post_confirm_delete.html"
     success_url = reverse_lazy("blog:posts_list")
