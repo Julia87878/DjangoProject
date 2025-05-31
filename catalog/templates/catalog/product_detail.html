@@ -17,8 +17,12 @@
                     <p>Описание: {{product.description}}</p>
                     <img src="{{product.image.url}}">
                     <button type="button" class="btn btn-lg btn-block btn-outline-success">Купить</button>
+                    {% if user == product.owner %}
                     <a href="{% url 'catalog:product_update' product.pk %}" class="btn btn-primary">Редактировать</a>
+                    {% endif %}
+                    {% if user == product.owner or perms.catalog.delete_product %}
                     <a href="{% url 'catalog:product_delete' product.pk %}" class="btn btn-danger">Удалить</a>
+                    {% endif %}
                     <a class="btn btn-success" href="{% url 'catalog:products_list' %}" role="button">Назад</a>
                 </div>
             </div>
