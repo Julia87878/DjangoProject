@@ -44,7 +44,7 @@ class Product(models.Model):
         blank=True,
         null=True,
     )
-    price = models.FloatField(verbose_name="Цена", help_text="Введите цену продукта.")
+    price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name="Цена", help_text="Введите цену продукта.")
     image = models.ImageField(
         upload_to="images/",
         verbose_name="Изображение",
