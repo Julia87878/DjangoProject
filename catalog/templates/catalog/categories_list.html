@@ -1,0 +1,26 @@
+
+{% extends 'catalog/base.html' %}
+
+{% block title %}Список категорий продуктов{% endblock %}
+
+{% block content %}
+{% include 'catalog/includes/header.html' %}
+<div class="container">
+    <div class="row text-center">
+        {% for category in categories %}
+        <div class="col-6">
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">{{category.name}}</h4>
+                </div>
+                <div class="card-body">
+                    <p>Описание: {{ category.description|truncatechars:100 }}</p>
+                    <img src="{{category.image.url}}">
+                    <a class="btn btn-success" href="{% url 'catalog:category_detail' category.pk %}" role="button">Посмотреть</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

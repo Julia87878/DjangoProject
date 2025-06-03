@@ -1,0 +1,46 @@
+{% extends 'catalog/base.html' %}
+
+{% block title %}Категория продуктов{% endblock %}
+
+{% block content %}
+{% include 'catalog/includes/header.html' %}
+<div class="container">
+    <div class="row text-center">
+        <div class="col-8">
+                    <h4 class="my-0 font-weight-normal">{{category.name}}</h4>
+                    <p>Описание: {{category.description}}</p>
+                    <div class="container">
+    <div class="row text-center">
+        {% for product in category_products %}
+        <div class="col-10">
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">{{product.name}}</h4>
+                </div>
+                <div class="card-body">
+                    <p>Описание: {{ product.description|truncatechars:100 }}</p>
+                    <img src="{{product.image.url}}">
+                    <a class="btn btn-success" href="{% url 'catalog:product_detail' product.pk %}" role="button">Посмотреть</a>
+                    {% if perms.catalog.can_unpublish_product %}
+                    <a class="btn btn-secondary" href="{% url 'catalog:product_unpublish' product.pk %}" >Отменить публикацию продукта</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+            <a class="btn btn-success" href="{% url 'catalog:categories_list' %}" role="button">Назад</a>
+             </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
