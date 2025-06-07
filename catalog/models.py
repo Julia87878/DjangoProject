@@ -12,6 +12,13 @@ class Category(models.Model):
     description = models.TextField(
         blank=True, verbose_name="Описание", help_text="Введите описание категории"
     )
+    image = models.ImageField(
+        upload_to="images/",
+        verbose_name="Изображение",
+        help_text="Загрузите изображение категории.",
+        blank=True,
+        null=True,
+    )
 
     class Meta:
         verbose_name = "категория"
@@ -44,7 +51,12 @@ class Product(models.Model):
         blank=True,
         null=True,
     )
-    price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name="Цена", help_text="Введите цену продукта.")
+    price = models.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        verbose_name="Цена",
+        help_text="Введите цену продукта.",
+    )
     image = models.ImageField(
         upload_to="images/",
         verbose_name="Изображение",

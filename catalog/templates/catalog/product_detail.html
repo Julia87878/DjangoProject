@@ -23,7 +23,7 @@
                     {% if user == product.owner or perms.catalog.delete_product %}
                     <a href="{% url 'catalog:product_delete' product.pk %}" class="btn btn-danger">Удалить</a>
                     {% endif %}
-                    <a class="btn btn-success" href="{% url 'catalog:products_list' %}" role="button">Назад</a>
+                    <a class="btn btn-success" href="{% url 'catalog:products_list'%}" role="button">Вернуться к списку продуктов</a>
                 </div>
             </div>
         </div>
